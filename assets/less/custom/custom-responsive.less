@@ -1,0 +1,66 @@
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  nav.section-header {
+    .header-flexbox {
+      .nav-button {
+        display: flex;
+        margin-right: -10px;
+      }
+
+      .flexbox-nav-wrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        overflow-y: scroll;
+        background: #fff;
+        z-index: 555;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+
+        .nav-button-close {
+          display: block;
+        }
+
+        .flexbox-nav-inner {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          min-height: 100%;
+          padding: 50px;
+          margin-right: 0;
+
+          .flexbox-nav {
+            li {
+              a {
+              }
+            }
+          }
+        }
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 575.98px) {
+}
+
+// Extra small devices (portrait phones, less than 576px)
+@media (max-width: 400px) {
+}
