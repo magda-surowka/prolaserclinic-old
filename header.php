@@ -100,111 +100,53 @@
                         <div class="flexbox-nav-inner">
                             <ul class="flexbox-nav list-unstyled">
                                 <li class="dropdown">
-                                    <a class="dropdown-toggle" href="" id="offer-desktop" role="button"
+                                    <a class="dropdown-toggle list-item" href="" id="offer-desktop" role="button"
                                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Oferta
                                     </a>
-                                    <div class="dropdown-menu mt-0 w-100 animate slideIn"
-                                        aria-labelledby="offer-desktop">
-                                        <div class="offer-wrapper">
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/12_depilacja-laserowa.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Depilacja laserowa <br> Lightsheer</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/106_modelowanie-sylwetki-onda.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Modelowanie sylwetki <br> ONDA</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/6_modelowanie-sylwetki.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Nowoczesna <br> kosmetologia</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/144191450_703210650266791_3021640722631563648_n.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Laserowe usuwanie <br> tatuażu</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/106_modelowanie-sylwetki-onda.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Nazwa <br> usługi</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                            <div class="dropdown-item">
-                                                <div class="item-bg">
-                                                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/236183130_809015229686332_6501702576155402198_n.jpg"
-                                                        alt="">
-                                                    <div class="item-text">
-                                                        <h2>Nazwa <br> usługi</h2>
-                                                        <div class="btn btn-color">Pełna oferta</div>
-                                                    </div>
-                                                </div>
-                                                <a href="" class="item-border"></a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php
+                                        wp_nav_menu( array(
+                                            'menu'				=>	'Menu Główne - oferta',
+                                            'theme_location'	=>	'prolaserclinic-main-menu-offer',
+                                            'depth'             =>  0,
+                                            'container'         => 	'',
+                                            'menu_class'     	=> 	'dropdown-menu mt-0 w-100 animate slideIn',
+                                            'link_after' 		=> 	'<div class="item-border"></div><div class="btn btn-color">Pełna oferta</div>'
+                                        ));
+                                    ?>
                                 </li>
                                 <li>
-                                    <a href="cennik">Cennik</a>
+                                    <a class="list-item" href="<?php echo site_url('/cennik') ?>">Cennik</a>
                                 </li>
                                 <li>
-                                    <a href="promocje" class="color-link">Promocje</a>
+                                    <a class="list-item color-link"
+                                        href="<?php echo site_url('/promocje') ?>">Promocje</a>
                                 </li>
                                 <li>
-                                    <a href="voucher">Kup voucher</a>
+                                    <a class="list-item" href="<?php echo site_url('/kup-voucher') ?>">Kup voucher</a>
                                 </li>
                             </ul>
-                            <a class="logo-dark" href="">
+                            <a class="logo-dark" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/images/logo/logo.svg"
                                     alt="">
                             </a>
-                            <a class="logo-white" href="">
+                            <a class="logo-white" href="<?php echo esc_url( home_url( '/' ) ); ?>">
                                 <img src="<?php echo get_template_directory_uri();?>/assets/images/logo/logo-white.png"
                                     alt="">
                             </a>
                             <ul class="flexbox-nav list-unstyled">
                                 <li>
-                                    <a href="o-nas">Klinika Pro Laser Clinic</a>
+                                    <a class="list-item"
+                                        href="<?php echo site_url('/klinika-pro-laser-clinic') ?>">Klinika Pro Laser
+                                        Clinic</a>
                                 </li>
                                 <li>
-                                    <a href="blog">Blog</a>
+                                    <a class="list-item" href="blog">Blog</a>
                                 </li>
                                 <li>
-                                    <a href="faq">FAQ</a>
+                                    <a class="list-item" href="<?php echo site_url('/faq') ?>">FAQ</a>
                                 </li>
                                 <li>
-                                    <a href="kontakt">Kontakt</a>
+                                    <a class="list-item" href="<?php echo site_url('/kontakt') ?>">Kontakt</a>
                                 </li>
                             </ul>
                         </div>

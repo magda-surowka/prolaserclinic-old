@@ -1,6 +1,6 @@
 <?php
 /**
- * Front page template file
+ *Template name: Strona Główna*
  *
  * @package prolaserclinic
  */
@@ -37,7 +37,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-OFFER ============================== -->
-<section class="section-offer">
+<section class="section-offer" id="oferta">
     <span class="text-bg">Oferta</span>
     <img src="<?php echo get_template_directory_uri();?>/assets/images/background/AdobeStock_405832892_Preview-removebg-preview 1.png"
         alt="" class="img-absolute">
@@ -233,7 +233,7 @@ get_header();
                     sylwetki metodą ONDA DEKA Coolwaves. oferujemy naszym Pacjentom najnowsze dostępne na rynku
                     technologie, które dają doskonałe efekty .
                 </p>
-                <p>Posiadamy ponad 10 letnie doświadczenie  w wykonywaniu zabiegów laserowych. Daje to naszym Pacjentom
+                <p>Posiadamy ponad 10 letnie doświadczenie w wykonywaniu zabiegów laserowych. Daje to naszym Pacjentom
                     pewność obsługi przez doskonale wykwalifikowaną i doświadczoną kadrę, która zawsze chętnie służy
                     swoją pomocą oraz poradą.
                 </p>

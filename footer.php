@@ -75,10 +75,18 @@
             <div class="inner-service">
                 <ul class="list-unstyled">
                     <li class="heading">Usługi</li>
-                    <li><a href="">Depilacja laserowa Light Sheer</a></li>
+                    <!-- <li><a href="">Depilacja laserowa Light Sheer</a></li>
                     <li><a href="">Modelowanie sylwetki ONDA</a></li>
                     <li><a href="">Nowoczesna kosmetologia</a></li>
-                    <li><a href="">Laserowe usuwanie tatuażu</a></li>
+                    <li><a href="">Laserowe usuwanie tatuażu</a></li> -->
+                    <?php
+                        wp_nav_menu( array(
+                            'menu'				=>	'Menu Główne - oferta - stopka',
+                            'theme_location'	=>	'prolaserclinic-main-menu-offer-footer',
+                            'depth'             =>  0,
+                            'container'         => 	'',
+                        ));
+                    ?>
                 </ul>
             </div>
             <div class="inner-service">
@@ -86,10 +94,10 @@
                     <li class="heading">Nie przegap</li>
                 </ul>
                 <ul class="list-unstyled">
-                    <li><a href="">Cennik</a></li>
-                    <li><a href="">Promocje</a></li>
-                    <li><a href="">Kup voucher</a></li>
-                    <li><a href="">Metamorfozy</a></li>
+                    <li><a href="<?php echo site_url('/cennik') ?>">Cennik</a></li>
+                    <li><a href="<?php echo site_url('/promocje') ?>">Promocje</a></li>
+                    <li><a href="<?php echo site_url('/kup-voucher') ?>">Kup voucher</a></li>
+                    <li><a href="<?php echo site_url('/metamorfozy') ?>">Metamorfozy</a></li>
                 </ul>
             </div>
             <div class="inner-service">
@@ -97,10 +105,10 @@
                     <li class="heading">Pozostałe</li>
                 </ul>
                 <ul class="list-unstyled">
-                    <li><a href="">O Klinice</a></li>
+                    <li><a href="<?php echo site_url('/klinika-pro-laser-clinic') ?>">O Klinice</a></li>
                     <li><a href="">Blog</a></li>
-                    <li><a href="">FAQ</a></li>
-                    <li><a href="">Kontakt</a></li>
+                    <li><a href="<?php echo site_url('/faq') ?>">FAQ</a></li>
+                    <li><a href="<?php echo site_url('/kontakt') ?>">Kontakt</a></li>
                 </ul>
             </div>
         </div>
