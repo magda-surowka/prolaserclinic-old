@@ -106,5 +106,26 @@ jQuery(document).ready(function ($) {
     }
   });
 
+  // Smooth scroll
+
+  $(document).ready(function () {
+    let navLink = $('a[data-scroll="smooth-scroll"]');
+    $(navLink).bind("click", function (e) {
+      e.preventDefault();
+
+      let target = $(this).attr("href");
+
+      $("html, body")
+        .stop()
+        .animate({
+            scrollTop: $(target).offset().top - 250,
+          },
+          1000
+        );
+
+      return false;
+    });
+  });
+
   // -------------------------- //
 });

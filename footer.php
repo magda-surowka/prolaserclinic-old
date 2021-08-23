@@ -75,10 +75,6 @@
             <div class="inner-service">
                 <ul class="list-unstyled">
                     <li class="heading">Usługi</li>
-                    <!-- <li><a href="">Depilacja laserowa Light Sheer</a></li>
-                    <li><a href="">Modelowanie sylwetki ONDA</a></li>
-                    <li><a href="">Nowoczesna kosmetologia</a></li>
-                    <li><a href="">Laserowe usuwanie tatuażu</a></li> -->
                     <?php
                         wp_nav_menu( array(
                             'menu'				=>	'Menu Główne - oferta - stopka',

@@ -130,7 +130,7 @@ get_header();
                 </div>
             </div>
         </div>
-        <div class="wrapper-cta">
+        <div class="content-cta">
             <div class="cta-description">
                 <header>
                     <h2>
