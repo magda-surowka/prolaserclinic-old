@@ -610,11 +610,18 @@ header {
 }
 
 section.section-welcome {
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(10px);
+  }
+
   .welcome-flexbox {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 81vh;
+    height: 60vh;
 
     .owl-carousel-welcome {
       height: 100%;
@@ -669,7 +676,7 @@ section.section-welcome {
           height: 100%;
           width: 100%;
           object-fit: cover;
-          transition: all 850ms;
+          transition: all 750ms;
         }
       }
     }
@@ -720,6 +727,12 @@ section.section-offer {
   position: relative;
   padding: 100px 0 120px;
   overflow: hidden;
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
 
   .img-absolute {
     position: absolute;
@@ -874,6 +887,12 @@ section.section-offer {
 section.section-blog {
   position: relative;
   padding: 100px 0 140px;
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
 
   .wrapper-content {
     display: flex;
@@ -1024,6 +1043,12 @@ section.section-about {
   position: relative;
   padding: 50px 0;
   overflow: hidden;
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
 
   .wrapper-content {
     position: relative;
@@ -1114,6 +1139,13 @@ section.section-about {
 }
 
 section.about-section-content {
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
+
   .section-wrapper {
     position: relative;
     padding-top: 60px;
@@ -1408,6 +1440,13 @@ section.faq-section-content {
 }
 
 section.pricelist-section-content {
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
+
   .section-wrapper {
     padding-top: 40px;
 
@@ -1481,6 +1520,13 @@ section.pricelist-section-content {
 }
 
 section.promotion-section-content {
+  transition: all 750ms;
+
+  &.hide {
+    opacity: 0;
+    transform: translatey(20px);
+  }
+
   .section-wrapper {
     position: relative;
     padding-top: 40px;
@@ -1507,7 +1553,7 @@ section.promotion-section-content {
         list-style: none;
 
         .menu-item {
-          transition: all 850ms;
+          transition: all 750ms;
           backface-visibility: hidden;
 
           a {

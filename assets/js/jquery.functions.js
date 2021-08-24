@@ -127,5 +127,37 @@ jQuery(document).ready(function ($) {
     });
   });
 
+  // Animations
+
+  const elementsToShow = $("[data-hide][data-removeClass]");
+
+  elementsToShow.each((index, el) => {
+    setTimeout(() => {
+      $(el).removeClass($(el).attr("data-removeClass"));
+    }, $(el).attr("data-hide"));
+  });
+
+  $.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top - 200;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  $(window).on("resize scroll", function () {
+    setTimeout(function () {
+      $(".animate-element").each(function () {
+        if ($(this).isInViewport()) {
+          $(this).removeClass("hide");
+        } else {
+          $(this).addClass("hide");
+        }
+      });
+    }, 300);
+  });
+
   // -------------------------- //
 });

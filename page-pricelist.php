@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <!-- ============================== SECTION-PRICELIST ============================== -->
-<section class="pricelist-section-content">
+<section class="pricelist-section-content hide" data-hide="100" data-removeClass="hide">
     <div class="subpage-wrapper-heading">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/banner-cennik.png" alt="">
     </div>

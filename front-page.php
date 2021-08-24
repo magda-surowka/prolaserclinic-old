@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <!-- ============================== SECTION-WELCOME ============================== -->
-<section class="section-welcome">
+<section class="section-welcome hide" data-hide="100" data-removeClass="hide">
     <div class="welcome-flexbox">
         <div class="owl-carousel-welcome">
             <div class="item">
@@ -37,7 +37,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-OFFER ============================== -->
-<section class="section-offer" id="oferta">
+<section class="section-offer animate-element hide" id="oferta">
     <span class="text-bg">Oferta</span>
     <img src="<?php echo get_template_directory_uri();?>/assets/images/background/AdobeStock_405832892_Preview-removebg-preview 1.png"
         alt="" class="img-absolute">
@@ -143,7 +143,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-BLOG ============================== -->
-<section class="section-blog">
+<section class="section-blog animate-element hide" id="oferta">
     <span class="text-bg">Blog</span>
     <div class="section-wrapper">
         <div class="wrapper-content">
@@ -208,7 +208,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-ABOUT ============================== -->
-<section class="section-about">
+<section class="section-about animate-element hide">
     <span class="text-bg">O nas</span>
     <div class="section-wrapper">
         <div class="wrapper-content">

@@ -9,8 +9,8 @@ get_header();
 ?>
 
 <!-- ============================== SECTION-ABOUT ============================== -->
-<section class="about-section-content">
-    <div class="subpage-wrapper-heading">
+<section class="about-section-content hide" data-hide="100" data-removeClass="hide">
+    <div class=" subpage-wrapper-heading">
         <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/banner3.jpg" alt="">
         <header>
             <h2>Pro Laser Clinic - <?php the_title();?></h2>
