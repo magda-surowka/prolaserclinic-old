@@ -14,7 +14,7 @@ var config = {
   cssIn: "./css/**/*.css",
   cssOut: "./css/",
   cssOutName: "style.css",
-  localhostIn: "http://prolaserclinic.local/",
+  localhostIn: "http://localhost:10004/",
 };
 
 gulp.task("reload", function () {
@@ -25,8 +25,8 @@ gulp.task("serve", ["less"], function () {
   browserSync({
     notify: false,
     proxy: config.localhostIn,
-    host: "prolaserclinic.local",
-    port: 3000,
+    host: "localhost",
+    port: 10004,
   });
 
   gulp.watch([config.phpIn], ["reload"]);

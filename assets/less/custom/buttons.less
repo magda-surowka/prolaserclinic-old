@@ -7,6 +7,10 @@
   transition: all 850ms;
   backface-visibility: hidden;
 
+  a {
+    border: none !important;
+  }
+
   &.btn-color {
     background-color: @color1;
     text-transform: uppercase;
@@ -17,6 +21,10 @@
     letter-spacing: 1px;
     color: #fff;
     transition: background-color 350ms;
+  }
+
+  &.color-link {
+    background-color: #ff2e2e;
   }
 
   &:hover {
@@ -118,42 +126,35 @@
 #return-to-top {
   position: fixed;
   z-index: 333;
-  bottom: 80px;
-  right: 0;
-  display: block;
+  height: 35px;
+  width: 35px;
+  right: 50px;
+  bottom: 50px;
+  background: @color1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   visibility: hidden;
   opacity: 0;
   transition: all 350ms ease;
   cursor: pointer;
-  transform: translateY(100px) rotate(90deg);
+  transform: translateY(50px);
+
+  svg {
+    fill: #fff;
+    height: 13px;
+    width: 13px;
+  }
+
+  &:hover {
+    background: darken(@color1, 10%);
+  }
 
   &.active {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0) rotate(90deg);
-  }
-
-  .line {
-    width: 120px;
-    height: 0.5px;
-    background-color: @color1;
-  }
-
-  p {
-    font-size: 15px;
-    color: #000;
-    text-transform: uppercase;
-    text-align: right;
-    margin-right: 3px;
-    transition: color 350ms;
-    font-weight: 600;
-  }
-
-  &:hover {
-    p {
-      color: @color1;
-    }
+    transform: none;
   }
 }
 

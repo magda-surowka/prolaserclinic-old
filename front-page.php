@@ -9,7 +9,7 @@ get_header();
 ?>
 
 <!-- ============================== SECTION-WELCOME ============================== -->
-<section class="section-welcome">
+<section class="section-welcome hide" data-hide="100" data-removeClass="hide">
     <div class="welcome-flexbox">
         <div class="owl-carousel-welcome">
             <div class="item">
@@ -26,28 +26,21 @@ get_header();
             </div>
         </div>
     </div>
-    <p class="welcome-live">
-        <span>
-            Promocja! modelowanie sylwetki metodą <strong> Onda Coolwaves</strong> - teraz zabieg kosztuje <strong>
-                499zł</strong> zamiast
-            1599zł.
-            zarezerwuj termin!
-        </span>
-    </p>
+    <?php prolaserclinic_live_text(); ?>
 </section>
 
 <!-- ============================== SECTION-OFFER ============================== -->
-<section class="section-offer" id="oferta">
+<section class="section-offer hide" data-hide="800" data-removeClass="hide" id="oferta">
     <span class="text-bg">Oferta</span>
     <img src="<?php echo get_template_directory_uri();?>/assets/images/background/AdobeStock_405832892_Preview-removebg-preview 1.png"
         alt="" class="img-absolute">
     <div class="section-wrapper">
         <header class="center">
             <h2>Usługi Pro Laser Clinic</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quibusdam neque sequi facere blanditiis
-                assumenda tempora at, quasi totam sed consectetur, debitis iusto iure doloremque reprehenderit? Deleniti
-                accusamus inventore molestiae! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate,
-                culpa?</p>
+            <p>Pro Laser Clinic to nowoczesna klinika specjalizująca się w zabiegach laserowych oraz modelowaniu
+                sylwetki metodą ONDA DEKA Coolwaves. Wiemy jak ważne jest samopoczucie, na które duży wpływ ma
+                nasz wygląd. Dlatego oferujemy naszym Pacjentom najnowsze dostępne na rynku technologie, które dają
+                doskonałe efekty.</p>
         </header>
         <div class="offer-content">
             <div class="offer-item">
@@ -117,7 +110,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/beautiful-woman-applying-cosmetics.jpg"
                         alt="">
                     <div class="item-text">
-                        <h2>Nazwa usługi</h2>
+                        <h2>Laser frakcyjny eCO2</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit recusandae officiis sunt.
                         </p>
                         <div class="btn btn-color">Pełna oferta</div>
@@ -130,7 +123,7 @@ get_header();
                     <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/beautiful-female-face-perfect-clean-face-skin-white.jpg"
                         alt="">
                     <div class="item-text">
-                        <h2>Nazwa usługi</h2>
+                        <h2>Zabieg phFORMULA</h2>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit recusandae officiis sunt.
                         </p>
                         <div class="btn btn-color">Pełna oferta</div>
@@ -143,7 +136,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-BLOG ============================== -->
-<section class="section-blog">
+<section class="section-blog animate-element hide" id="oferta">
     <span class="text-bg">Blog</span>
     <div class="section-wrapper">
         <div class="wrapper-content">
@@ -153,7 +146,7 @@ get_header();
                         Ostatnie
                         <span>na blogu</span>
                     </h2>
-                    <p>Zapraszamy do odwiedzania nas w dziale nowości. Zawarte treści pomogą w doborze zabiegów i
+                    <p>Zapraszamy do odwiedzania nas w dziale nowości.Zawarte treści pomogą w doborze zabiegów i
                         odpowiemy na najważniejsze problemy. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                         Perferendis soluta iure tenetur ea natus praesentium illum recusandae eveniet numquam
                         cupiditate!
@@ -208,7 +201,7 @@ get_header();
 </section>
 
 <!-- ============================== SECTION-ABOUT ============================== -->
-<section class="section-about">
+<section class="section-about animate-element hide">
     <span class="text-bg">O nas</span>
     <div class="section-wrapper">
         <div class="wrapper-content">

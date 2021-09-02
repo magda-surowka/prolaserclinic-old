@@ -9,9 +9,9 @@ get_header();
 ?>
 
 <!-- ============================== SECTION-ABOUT ============================== -->
-<section class="about-section-content">
-    <div class="subpage-wrapper-heading">
-        <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/banner3.jpg" alt="">
+<section class="about-section-content hide" data-hide="100" data-removeClass="hide">
+    <div class=" subpage-wrapper-heading">
+        <?php prolaserclinic_main_image_subpage(); ?>
         <header>
             <h2>Pro Laser Clinic - <?php the_title();?></h2>
         </header>
@@ -20,28 +20,7 @@ get_header();
         <img src="<?php echo get_template_directory_uri();?>/assets/images/background/AdobeStock_405832892_Preview-removebg-preview 1.png"
             alt="" class="img-absolute">
         <div class="wrapper-description">
-            <p>Pro Laser Clinic to nowoczesna klinika specjalizująca się w zabiegach laserowych oraz modelowaniu
-                sylwetki metodą ONDA DEKA Coolwaves. Wiemy jak ważne jest samopoczucie, na które bardzo duży wpływ ma
-                nasz wygląd. Dlatego oferujemy naszym Pacjentom najnowsze dostępne na rynku technologie, które dają
-                doskonałe efekty.</p>
-
-            <p> Posiadamy ponad 10. letnie doświadczenie w wykonywaniu zabiegów laserowych. Daje to naszym Pacjentom
-                pewność obsługi przez doskonale wykwalifikowaną i doświadczoną kadrę, która zawsze chętnie służy swoją
-                pomocą oraz poradą.</p>
-
-            <p> Wierzymy w piękno każdej osoby, czego wyraz daliśmy w naszym motto, które brzmi: „Każdy z nas nosi w
-                sobie piękno. Sztuka polega na tym aby umieć je odkryć". Do pielęgnacji urody podchodzimy holistycznie,
-                zwracając szczególną uwagę zarówno na aspekty estetyczne jak i zdrowotne.</p>
-
-            <p> W naszej klinice pracujemy na certyfikowanych urządzeniach, największych światowych producentów – takich
-                jak laser medycznym amerykańskiej marki Lumenis. Takie podejście sprawia, że wykonywane przez nas
-                zabiegi nie tylko są niezwykle skuteczne, ale przede wszystkim bezpieczne dla Pacjentów.</p>
-
-            <p> Naszą specjalizacją jest depilacja laserem Light Sheer Desire. Jednak posiadamy również wieloletnie
-                doświadczenie walce ze starzejącą się skórą, bliznami, rozstępami, cellulitem czy innymi problemami
-                skóry. Do każdego Pacjenta podchodzimy indywidualnie, idealnie dobierając techniki i metody leczenia do
-                aktualnych potrzeb. Gwarantuje to zachwycające efekty widoczne w krótkim czasie po rozpoczęciu terapii.
-            </p>
+            <?php prolaserclinic_text_block(); ?>
         </div>
         <div class="wrapper-gallery">
             <div class="gallery-heading">
@@ -52,42 +31,13 @@ get_header();
                 </header>
             </div>
             <div class="gallery-content">
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/183306482_754769755110880_4240455149681265766_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
-                <a href="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                    class="gallery-item" data-fancybox="o-nas">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/177006864_747610955826760_8573886425798073615_n.jpg"
-                        alt="">
-                    <div class="item-border"></div>
-                </a>
+                <?php 
+                    if ( have_posts() ) { 
+                        while ( have_posts() ) : the_post();
+                            the_content();
+                        endwhile;
+                    } 
+                ?>
             </div>
         </div>
         <div class="wrapper-testimonials">
@@ -131,23 +81,7 @@ get_header();
             </div>
         </div>
         <div class="content-cta">
-            <div class="cta-description">
-                <header>
-                    <h2>
-                        Nie zwlekaj
-                        <span>sprawdź naszą ofertę</span>
-                    </h2>
-                    <p>A teraz, gdy już zapoznałeś się z firmą, koniecznie zobacz, jakie
-                        innowacyjne zabiegi wykonujemy w Prolaser!
-                    </p>
-                </header>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>#oferta" class="btn btn-color">Oferta Pro Laser
-                    Clinic</a>
-            </div>
-            <div class="cta-image">
-                <img src="<?php echo get_template_directory_uri();?>/assets/images/pictures/beautiful-female-face-perfect-clean-face-skin-white.jpg"
-                    alt="">
-            </div>
+            <?php prolaserclinic_cta(); ?>
         </div>
     </div>
 </section>

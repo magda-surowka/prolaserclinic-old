@@ -108,24 +108,68 @@ jQuery(document).ready(function ($) {
 
   // Smooth scroll
 
-  $(document).ready(function () {
-    let navLink = $('a[data-scroll="smooth-scroll"]');
-    $(navLink).bind("click", function (e) {
-      e.preventDefault();
-
-      let target = $(this).attr("href");
-
-      $("html, body")
-        .stop()
-        .animate({
-            scrollTop: $(target).offset().top - 250,
-          },
-          1000
-        );
-
-      return false;
-    });
+  $('*[data-scroll="scroll"]').click(function () {
+      $('body,html').animate({
+        scrollTop: $($(this).attr('href')).offset().top - 60,
+    }, 900);
   });
+
+  // Animations
+
+  const elementsToShow = $("[data-hide][data-removeClass]");
+
+  elementsToShow.each((index, el) => {
+    setTimeout(() => {
+      $(el).removeClass($(el).attr("data-removeClass"));
+    }, $(el).attr("data-hide"));
+  });
+
+  $.fn.isInViewport = function () {
+    var elementTop = $(this).offset().top - 50;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop();
+    var viewportBottom = viewportTop + $(window).height();
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+  };
+
+  $(window).on("resize scroll", function () {
+    setTimeout(function () {
+      $(".animate-element").each(function () {
+        if ($(this).isInViewport()) {
+          $(this).removeClass("hide");
+        } else {
+          $(this).addClass("hide");
+        }
+      });
+    }, 300);
+  });
+
+  // Return to top arrow
+
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {
+            $('#return-to-top').addClass('active');
+        } else {
+            $('#return-to-top').removeClass('active');
+        }
+    });
+
+    $('#return-to-top').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 900);
+    });
+
+    // Adding data-scroll attribute
+
+    $('.content-tables .wp-block-buttons .btn-color a').attr("data-scroll","scroll");
+
+    // Fancybox
+
+    $(".about-section-content .blocks-gallery-item figure a").attr('data-fancybox', 'o-nas-galeria');
+
 
   // -------------------------- //
 });

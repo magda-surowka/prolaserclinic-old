@@ -35,21 +35,119 @@ add_action( 'wp_enqueue_scripts', 'prolaserclinic_scripts' );
     }
     add_action ('after_setup_theme' , 'prolaserclinic_theme_nav');
 
-    //Register widgets
+// Register Gutenberg
 
-    function prolaserclinic_widget_promotion_nav() {
-        register_sidebar( array(
-             'name'          => 'Promocje - nawigacja',
-             'id'            => 'prolaserclinic-promotion',
-             'before_widget' => ' ',
-             'after_widget'  => ' ',
-             'before_title'  => ' ',
-             'after_title'   => ' ',
-         ));
+    function register_gutenberg(){
+        add_theme_support('wp-block-styles');
     }
     
-    add_action( 'widgets_init', 'prolaserclinic_widget_promotion_nav');
+    add_action ('after_setup_theme','register_gutenberg');
     
+
+    add_action('init', function() {
+        register_block_style('core/heading', [
+            'name' => '.custom-table',
+            'label' => __('Custom style for table', 'txtdomain'),
+            'isDefault' => true
+        ]);
+    });
+
+// Custom Post Types
+
+    //Offer (oferta)
+
+    function prolaserclinic_offer_post_types() {
+        $labels = array(
+            'name'                => 'Oferta',
+            'singular_name'       => 'Oferta',
+            'menu_name'           => 'Oferta',
+            'all_items'           => 'Wszystkie oferty',
+            'view_item'           => 'Zobacz ofertę',
+            'add_new_item'        => 'Dodaj ofertę',
+            'add_new'             => 'Dodaj nową',
+            'edit_item'           => 'Edytuj ofertę',
+            'update_item'         => 'Aktualizuj',
+            'search_items'        => 'Szukaj ofert',
+            'not_found'           => 'Nie znaleziono',
+            'not_found_in_trash'  => 'Nie znaleziono'
+        ); 
+
+        $args = array(
+            'label' => 'offer',
+            'rewrite' => array(
+                'slug' => 'oferta'
+            ),
+            'description'         => 'Oferta',
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'thumbnail'),
+            'taxonomies'          => array(),
+            'hierarchical'        => false,
+            'public'              => true, 
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'show_in_rest'       => true,
+            'menu_position'       => 4,
+            'menu_icon'           => 'dashicons-id-alt',
+            'can_export'          => true,
+            'has_archive'         => false,
+            'capability_type'     => 'post',
+            "supports" => array( "title", "thumbnail", "custom-fields", "page-attributes" ),
+        );
+
+        register_post_type( 'offer', $args );
+    } 
+    
+    add_action( 'init', 'prolaserclinic_offer_post_types');
+
+    // Promotion (promocje)
+
+    function prolaserclinic_promotion_post_types() {
+        $labels = array(
+            'name'                => 'Promocje',
+            'singular_name'       => 'Promocje',
+            'menu_name'           => 'Promocje',
+            'all_items'           => 'Wszystkie promocje',
+            'view_item'           => 'Zobacz promocję',
+            'add_new_item'        => 'Dodaj promocję',
+            'add_new'             => 'Dodaj nową',
+            'edit_item'           => 'Edytuj promocję',
+            'update_item'         => 'Aktualizuj',
+            'search_items'        => 'Szukaj promocji',
+            'not_found'           => 'Nie znaleziono',
+            'not_found_in_trash'  => 'Nie znaleziono'
+        ); 
+
+        $args = array(
+            'label' => 'promotion',
+            'rewrite' => array(
+                'slug' => 'promocja'
+            ),
+            'description'         => 'Promocje',
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'thumbnail'),
+            'taxonomies'          => array(),
+            'hierarchical'        => false,
+            'public'              => true, 
+            'show_ui'             => true,
+            'show_in_menu'        => true,
+            'show_in_nav_menus'   => true,
+            'show_in_admin_bar'   => true,
+            'show_in_rest'       => true,
+            'menu_position'       => 4,
+            'menu_icon'           => 'dashicons-star-filled',
+            'can_export'          => true,
+            'has_archive'         => false,
+            'capability_type'     => 'post',
+            "supports" => array( "title", "thumbnail", "custom-fields", "page-attributes" ),
+        );
+
+        register_post_type( 'promotion', $args );
+    } 
+    
+    add_action( 'init', 'prolaserclinic_promotion_post_types');
+
     
 // ACF functions
 
@@ -85,33 +183,63 @@ add_action( 'wp_enqueue_scripts', 'prolaserclinic_scripts' );
         }
     }
 
-    //** Pricelist tables */
+       /** CTA section */
 
-   function prolaserclinic_pricelist_promotion(){
-        $field_group_key = 'group_6123653991989';
-        $fields = acf_get_fields($field_group_key);
-    
-        
-        $field_name = get_field('pricelist_promotion_name');
-        $field_price = get_field('pricelist_promotion_price');
-        $field_link = get_field('pricelist_promotion_link');
+        function prolaserclinic_cta() {
+            $heading = get_field_object('cta_heading');
+            $description = get_field_object('cta_description');
+            $image = get_field_object('cta_image');
+            $button_link = get_field_object('cta_button_link');
+            
+            if(!empty($heading['value'])){
 
-        echo 
-        '<tr>
-            <td>'.$field_name.'</td>
-            <td>'.$field_price.' %</td>
-            <td>
-                <a href="'.$field_link.'" class="btn btn-color">Zarezerwuj wizytę</a>
-            </td>
-        </tr>';
-
-        // echo var_dump( $fields);
-    }
-
-      /** Promotion 1 */
-      function prolaserclinic_promotion_1() {
-        $text = get_field_object('text');
-        if(!empty($text['value'])){
-            echo '<p>'.$text['value'].'</p>';
+                echo '
+                <div class="cta-description">
+                    <header>
+                        '.$heading['value'].'
+                        <p>'.$description['value'].'</p>
+                    </header>
+                    <a href="'.$button_link['value'].'" class="btn btn-color">Czytaj więcej</a>
+                </div>
+                <div class="cta-image">
+                    <img src="'.$image['value'].'" alt="">
+                </div>  ';
+            }
         }
-    }
+
+        /** Main image/banner on subpages */
+
+          function prolaserclinic_main_image_subpage() {
+            $image = get_field_object('subpage_main_image');
+            
+            if(!empty($image['value'])){
+
+                echo 
+                '<img src="'.$image['value'].'" alt="">';
+            }
+        }
+
+        /** Block of text */
+
+          function prolaserclinic_text_block() {
+            $text = get_field_object('block_description');
+            
+            if(!empty($text['value'])){
+
+                echo $text['value'];
+            }
+        }
+
+        /** Live text below slider - main page */
+
+        function prolaserclinic_live_text() {
+            $text = get_field_object('live_text');
+            
+            if(!empty($text['value'])){
+
+                echo 
+                '<p class="welcome-live">
+                    <span> '.$text['value'].' </span>
+                </p>';
+            }
+        }
