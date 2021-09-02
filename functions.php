@@ -42,7 +42,6 @@ add_action( 'wp_enqueue_scripts', 'prolaserclinic_scripts' );
     }
     
     add_action ('after_setup_theme','register_gutenberg');
-    
 
     add_action('init', function() {
         register_block_style('core/heading', [
@@ -93,7 +92,7 @@ add_action( 'wp_enqueue_scripts', 'prolaserclinic_scripts' );
             'can_export'          => true,
             'has_archive'         => false,
             'capability_type'     => 'post',
-            "supports" => array( "title", "thumbnail", "custom-fields", "page-attributes" ),
+            "supports" => array( "title", "editor", "thumbnail", "custom-fields", "page-attributes" ),
         );
 
         register_post_type( 'offer', $args );

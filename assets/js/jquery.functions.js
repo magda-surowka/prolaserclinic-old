@@ -109,9 +109,12 @@ jQuery(document).ready(function ($) {
   // Smooth scroll
 
   $('*[data-scroll="scroll"]').click(function () {
-      $('body,html').animate({
-        scrollTop: $($(this).attr('href')).offset().top - 60,
-    }, 900);
+    $("body,html").animate(
+      {
+        scrollTop: $($(this).attr("href")).offset().top - 60,
+      },
+      900
+    );
   });
 
   // Animations
@@ -148,28 +151,36 @@ jQuery(document).ready(function ($) {
 
   // Return to top arrow
 
-    $(window).scroll(function() {
-        if ($(this).scrollTop() >= 50) {
-            $('#return-to-top').addClass('active');
-        } else {
-            $('#return-to-top').removeClass('active');
-        }
-    });
+  $(window).scroll(function () {
+    if ($(this).scrollTop() >= 50) {
+      $("#return-to-top").addClass("active");
+    } else {
+      $("#return-to-top").removeClass("active");
+    }
+  });
 
-    $('#return-to-top').click(function() {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 900);
-    });
+  $("#return-to-top").click(function () {
+    $("body,html").animate(
+      {
+        scrollTop: 0,
+      },
+      900
+    );
+  });
 
-    // Adding data-scroll attribute
+  // Adding data-scroll attribute
 
-    $('.content-tables .wp-block-buttons .btn-color a').attr("data-scroll","scroll");
+  $(".content-tables .wp-block-buttons .btn-color a").attr(
+    "data-scroll",
+    "scroll"
+  );
 
-    // Fancybox
+  // Fancybox
 
-    $(".about-section-content .blocks-gallery-item figure a").attr('data-fancybox', 'o-nas-galeria');
-
+  $(".about-section-content .blocks-gallery-item figure a").attr(
+    "data-fancybox",
+    "o-nas-galeria"
+  );
 
   // -------------------------- //
 });
